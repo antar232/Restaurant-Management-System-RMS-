@@ -62,3 +62,43 @@ button {
     cursor: pointer;
     border-radius: 5px;
 }
+body {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap; /* Allows wrapping if screen is small */
+    padding: 20px;
+}
+
+.menu-item {
+    background-color: #ff6700;
+    color: #000;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.menu-item button {
+    padding: 8px 15px;
+    background-color: #d35400;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu-item button:hover {
+    background-color: #c0392b;
+}
