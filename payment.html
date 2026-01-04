@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Options</title>
+<link rel="stylesheet" href="css/pay.css">
+</head>
+<body>
+<div class="container">
+    <h1>Payment Options</h1>
+
+    <label for="method">Select Payment Method:</label>
+    <select id="method" onchange="showPaymentMethod()">
+        <option value="">--Choose--</option>
+        <option value="card">Card</option>
+        <option value="rocket">Rocket</option>
+        <option value="bkash">bKash</option>
+    </select>
+
+    <!-- Card Payment -->
+    <div id="card" class="payment-method">
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+
+        <label for="expiry">Expiry Date:</label>
+        <input type="month" id="expiry" required>
+
+        <label for="cvv">CVV:</label>
+        <input type="number" id="cvv" placeholder="123" required>
+
+        <button class="btn" onclick="alert('Card Payment Successful!')">Pay Now</button>
+    </div>
+
+    <!-- Rocket Payment -->
+    <div id="rocket" class="payment-method">
+        <label for="rocket-number">Rocket Mobile Number:</label>
+        <input type="tel" id="rocket-number" placeholder="+8801XXXXXXXXX" required>
+
+        <label for="rocket-pin">Rocket PIN:</label>
+        <input type="password" id="rocket-pin" placeholder="****" required>
+
+        <button class="btn" onclick="alert('Rocket Payment Successful!')">Pay with Rocket</button>
+    </div>
+
+    <!-- bKash Payment -->
+    <div id="bkash" class="payment-method">
+        <label for="bkash-number">bKash Mobile Number:</label>
+        <input type="tel" id="bkash-number" placeholder="+8801XXXXXXXXX" required>
+
+        <label for="bkash-pin">bKash PIN:</label>
+        <input type="password" id="bkash-pin" placeholder="****" required>
+
+        <button class="btn" onclick="alert('bKash Payment Successful!')">Pay with bKash</button>
+    </div>
+</div>
+
+<script>
+function showPaymentMethod() {
+    const method = document.getElementById('method').value;
+    const methods = ['card', 'rocket', 'bkash'];
+    methods.forEach(m => {
+        document.getElementById(m).style.display = (m === method) ? 'block' : 'none';
+    });
+}
+</script>
+</body>
+</html>
